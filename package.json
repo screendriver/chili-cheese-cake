@@ -9,8 +9,8 @@
     "test": "mocha --compilers js:babel-register test/*.js",
     "prepublish": "npm run build && npm run lint && npm run test"
   },
-  "author": "Christian Rackerseder <npmjs@echooff.de>",
-  "license": "ISC",
+  "author": "Christian Rackerseder <git@echooff.de>",
+  "license": "MIT",
   "dependencies": {
     "botkit": "^0.1.1"
   },
