@@ -4,6 +4,7 @@
   "description": "A private Bot for our Slack team",
   "main": "src/index.js",
   "scripts": {
+    "clean": "rimraf dist",
     "build": "babel src -d dist",
     "lint": "eslint src test",
     "test": "mocha --compilers js:babel-register test/*.js",
@@ -24,6 +25,7 @@
     "eslint": "^2.9.0",
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-import": "^1.8.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "rimraf": "^2.5.2"
   }
 }
