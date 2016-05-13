@@ -2,7 +2,9 @@
   "name": "ChiliCheeseCake",
   "version": "0.0.1",
   "description": "A private Bot for our Slack team",
-  "main": "src/index.js",
+  "author": "Christian Rackerseder <git@echooff.de>",
+  "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "babel src -d dist",
@@ -10,8 +12,6 @@
     "test": "mocha --compilers js:babel-register test/*.js",
     "prepublish": "npm run build && npm run lint && npm run test"
   },
-  "author": "Christian Rackerseder <git@echooff.de>",
-  "license": "MIT",
   "dependencies": {
     "botkit": "^0.1.1"
   },
