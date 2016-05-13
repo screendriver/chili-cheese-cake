@@ -1,5 +1,5 @@
 {
-  "name": "slackbot",
+  "name": "ChiliCheeseCake",
   "version": "0.0.1",
   "description": "A private Bot for our Slack team",
   "main": "src/index.js",
