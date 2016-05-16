@@ -1,7 +1,7 @@
 import Botkit from 'botkit';
 
 class Bot {
-  constructor(storePath) {
+  constructor(storePath = './store') {
     this.controller = Botkit.slackbot({
       json_file_store: storePath,
       debug: true,
