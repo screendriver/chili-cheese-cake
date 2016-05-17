@@ -11,14 +11,13 @@ chai.use(dirtyChai);
 describe('bot', () => {
   after(() =>
     Promise.all([
-      rimrafPromise('store'),
       rimrafPromise('foo'),
     ])
   );
 
-  it('has default store location pointing to ./store', callback => {
+  it('has default store location pointing to ./dist/store', callback => {
     startBot();
-    fs.stat('./store', (err, stats) => {
+    fs.stat('./dist/store', (err, stats) => {
       stats.isDirectory().should.be.true();
       callback(err);
     });

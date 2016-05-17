@@ -2,7 +2,7 @@ import Botkit from 'botkit';
 
 import hello from './hears/hello';
 
-export function startBot(storePath = './store') {
+export function startBot(storePath = './dist/store') {
   const controller = Botkit.slackbot({
     json_file_store: storePath,
     debug: true,
