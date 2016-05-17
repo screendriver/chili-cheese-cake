@@ -1,18 +1,14 @@
 import Botkit from 'botkit';
 
-class Bot {
-  constructor(storePath = './store') {
-    this.controller = Botkit.slackbot({
-      json_file_store: storePath,
-      debug: true,
-    });
-  }
+import hello from './hears/hello';
 
-  start() {
-    this.controller.spawn({
-      token: process.env.token,
-    }).startRTM();
-  }
+export function startBot(storePath = './store') {
+  const controller = Botkit.slackbot({
+    json_file_store: storePath,
+    debug: true,
+  });
+  controller.spawn({
+    token: process.env.token,
+  }).startRTM();
+  hello(controller);
 }
-
-export default Bot;
