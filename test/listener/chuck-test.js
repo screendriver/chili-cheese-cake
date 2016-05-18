@@ -18,6 +18,32 @@ describe('chuck', () => {
     resetMocks();
   });
 
+  it('should fail on network errors', callback => {
+    const api = nock('http://api.icndb.com')
+      .get('/jokes/random')
+      .reply(404);
+    chuck(controllerMock, () => {
+      try {
+        controllerMock.hears.should.have.been.calledWith(
+          'chuck',
+          ['ambient', 'direct_message', 'direct_mention', 'mention'],
+          sinon.match.func
+        );
+        botMock.botkit.log.error.should.have.been.calledOnce();
+        botMock.reply.should.have.been.calledOnce();
+        botMock.reply.should.have.been.calledWith(
+          messageMock,
+          "Can't get a chuck norris joke :-("
+        );
+        callback();
+      } catch (e) {
+        callback(e);
+      } finally {
+        api.done();
+      }
+    });
+  });
+
   it('should complain when lastName was not set', () => {
     messageMock.text = 'chuck firstname';
     chuck(controllerMock);
@@ -55,10 +81,11 @@ describe('chuck', () => {
           messageMock,
           'i am the joke'
         );
-        api.done();
         callback();
       } catch (e) {
         callback(e);
+      } finally {
+        api.done();
       }
     });
   });
@@ -84,10 +111,11 @@ describe('chuck', () => {
           messageMock,
           'i am the joke'
         );
-        api.done();
         callback();
       } catch (e) {
         callback(e);
+      } finally {
+        api.done();
       }
     });
   });

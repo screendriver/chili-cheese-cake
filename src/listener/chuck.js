@@ -20,10 +20,11 @@ export default function (controller, repliedCallback = () => {}) {
     try {
       const body = await requestPromise(options);
       bot.reply(message, JSON.parse(body).value.joke);
-      repliedCallback();
     } catch (e) {
       bot.botkit.log.error("Can't get a chuck norris joke", e);
       bot.reply(message, "Can't get a chuck norris joke :-(");
+    } finally {
+      repliedCallback();
     }
   });
 }

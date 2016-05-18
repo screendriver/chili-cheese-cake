@@ -1,6 +1,7 @@
 import Botkit from 'botkit';
 
 import chuck from './listener/chuck';
+import taunt from './listener/taunt';
 
 export function startBot(storePath, debug) {
   const controller = Botkit.slackbot({
@@ -11,4 +12,5 @@ export function startBot(storePath, debug) {
     token: process.env.token,
   }).startRTM();
   chuck(controller);
+  taunt(controller);
 }
