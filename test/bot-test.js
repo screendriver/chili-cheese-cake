@@ -15,16 +15,8 @@ describe('bot', () => {
     ])
   );
 
-  it('has default store location pointing to ./dist/store', callback => {
-    startBot();
-    fs.stat('./dist/store', (err, stats) => {
-      stats.isDirectory().should.be.true();
-      callback(err);
-    });
-  });
-
-  it('should accept a different store location', callback => {
-    startBot('foo');
+  it('should accept a store location', callback => {
+    startBot('foo', false);
     fs.stat('./foo', (err, stats) => {
       stats.isDirectory().should.be.true();
       callback(err);
