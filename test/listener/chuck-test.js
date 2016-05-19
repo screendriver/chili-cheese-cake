@@ -26,7 +26,7 @@ describe('chuck', () => {
       try {
         controllerMock.hears.should.have.been.calledWith(
           'chuck',
-          ['ambient', 'direct_message', 'direct_mention', 'mention'],
+          ['direct_message', 'direct_mention', 'mention'],
           sinon.match.func
         );
         botMock.botkit.log.error.should.have.been.calledOnce();
@@ -49,7 +49,7 @@ describe('chuck', () => {
     chuck(controllerMock);
     controllerMock.hears.should.have.been.calledWith(
       'chuck',
-      ['ambient', 'direct_message', 'direct_mention', 'mention'],
+      ['direct_message', 'direct_mention', 'mention'],
       sinon.match.func
     );
     botMock.reply.should.have.been.calledOnce();
@@ -73,7 +73,7 @@ describe('chuck', () => {
       try {
         controllerMock.hears.should.have.been.calledWith(
           'chuck',
-          ['ambient', 'direct_message', 'direct_mention', 'mention'],
+          ['direct_message', 'direct_mention', 'mention'],
           sinon.match.func
         );
         botMock.reply.should.have.been.calledOnce();
@@ -103,7 +103,7 @@ describe('chuck', () => {
       try {
         controllerMock.hears.should.have.been.calledWith(
           'chuck',
-          ['ambient', 'direct_message', 'direct_mention', 'mention'],
+          ['direct_message', 'direct_mention', 'mention'],
           sinon.match.func
         );
         botMock.reply.should.have.been.calledOnce();

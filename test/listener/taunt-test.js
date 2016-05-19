@@ -38,7 +38,7 @@ describe('taunt', () => {
       try {
         controllerMock.hears.should.have.been.calledWith(
           'taunt',
-          ['ambient', 'direct_message', 'direct_mention', 'mention'],
+          ['direct_message', 'direct_mention', 'mention'],
           sinon.match.func
         );
         botMock.reply.should.have.been.calledOnce();
@@ -60,7 +60,7 @@ describe('taunt', () => {
       try {
         controllerMock.hears.should.have.been.calledWith(
           'taunt',
-          ['ambient', 'direct_message', 'direct_mention', 'mention'],
+          ['direct_message', 'direct_mention', 'mention'],
           sinon.match.func
         );
         botMock.reply.should.have.been.calledOnce();

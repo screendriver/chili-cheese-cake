@@ -4,7 +4,7 @@ import url from 'url';
 import util from 'util';
 
 export default function (controller, readCallback = () => {}) {
-  const types = ['ambient', 'direct_message', 'direct_mention', 'mention'];
+  const types = ['direct_message', 'direct_mention', 'mention'];
   controller.hears('taunt', types, (bot, message) => {
     const [, name] = message.text.split(' ');
     const jokesPath = url.resolve(__dirname, 'assets/mother_jokes.txt');

@@ -1,7 +1,7 @@
 import requestPromise from 'request-promise';
 
 export default function (controller, repliedCallback = () => {}) {
-  const types = ['ambient', 'direct_message', 'direct_mention', 'mention'];
+  const types = ['direct_message', 'direct_mention', 'mention'];
   controller.hears('chuck', types, async (bot, message) => {
     const [, firstName, lastName] = message.text.split(' ');
     const options = {
