@@ -8,8 +8,5 @@
     "after": false,
     "afterEach": false,
     "it": false
-  },
-  "rules": {
-    "no-console": "off"
   }
 }
