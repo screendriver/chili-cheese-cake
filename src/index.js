@@ -6,7 +6,11 @@ import winston from 'winston';
 
 import { startBot } from './bot';
 
-winston.add(winston.transports.File, { filename: url.resolve(__dirname, 'dist/botlog.log') });
+winston.add(winston.transports.File, {
+  filename: url.resolve(__dirname, 'dist/botlog.log'),
+  maxsize: 1000 * 500,
+  maxFiles: 2,
+});
 
 if (!process.env.token) {
   winston.error(chalk.red('Specify token in environment'));
