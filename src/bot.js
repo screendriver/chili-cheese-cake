@@ -15,6 +15,7 @@ export function startBot(storePath, debug, transClientId, transClientSec) {
   });
   controller.spawn({
     token: process.env.token,
+    retry: 10,
   }).startRTM();
   chuck(controller);
   taunt(controller);
