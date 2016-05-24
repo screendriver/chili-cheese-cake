@@ -5,6 +5,7 @@ import chuck from './listener/chuck';
 import joke from './listener/joke';
 import meal from './listener/meal';
 import taunt from './listener/taunt';
+import opfer from './listener/opfer';
 
 export function startBot(storePath, debug, transClientId, transClientSec) {
   logger.info('Starting bot');
@@ -20,4 +21,5 @@ export function startBot(storePath, debug, transClientId, transClientSec) {
   taunt(controller);
   meal(controller, transClientId, transClientSec);
   joke(controller);
+  opfer(controller);
 }
